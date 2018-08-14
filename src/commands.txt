@@ -1,0 +1,2 @@
+For build as base href:
+ng build --prod --base-href /emp/

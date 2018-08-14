@@ -1,0 +1,22 @@
+<p> Observable Basics </p>
+<hr>
+<p>Observable Data</p>
+<div *ngFor = "let f of fruits">{{f | uppercase}}</div>
+<hr>
+<div>
+<b>Error Status</b>
+{{anyErrors == true? "Error occured" : "It's all good"}}
+</div>
+<hr>
+<div>
+  <p>Completion Status</p>
+  {{finished == true? "Observer Completed": ""}}
+</div>
+<button (click)= "Start()">Start Emitting</button>
+<div style="margin-top: 20px">
+  <form [formGroup] = "mathgroup">
+    <input type="text" formControlName="inputNumber">
+    <hr>
+    <div>Square data is: {{square}}</div>
+  </form>
+</div>
