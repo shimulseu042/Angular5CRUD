@@ -1,11 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {Department} from '../models/department.model';
-
+import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
 @Component({
   selector: 'app-create-employee',
   templateUrl: './create-employee.component.html',
   styleUrls: ['./create-employee.component.css']
+})
+@NgModule({
+  imports : 
+  [
+    BsDatepickerModule.forRoot()
+  ]
 })
 export class CreateEmployeeComponent implements OnInit {
   departments: Department[] = [
