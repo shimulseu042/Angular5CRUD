@@ -58,9 +58,23 @@
               <option *ngFor = "let dept of departments" [value]="dept.id">{{dept.name}}</option>
             </select>
         </div>
+        <div class="row">
+          <div class="form-group col-md-4">
+            <label for="dateOfBirth">Date of Birth</label>
+            <input type="text" name="dateOfBirth" [(ngModel)]="dateOfBirth" placement="right" id="dateOfBirth" class="form-control" [bsConfig]="bsDatePicker" bsDatepicker>
+          </div>
+        </div>
         <div class="form-group">
-          <label for="dateOfBirth">Date of Birth</label>
-          <input type="text" name="dateOfBirth" [(ngModel)]="dateOfBirth" id="dateOfBirth" class="form-control" bsDaterangepicker>
+          <label for="photoPath">Photo Path</label>
+          <input type="text" name="photoPath" [(ngModel)]="photoPath" id="photoPath" class="form-control">
+        </div>
+        <div class="form-group">
+          <button type="button" (click)="togglePhotoPreview()"class="btn btn-primary">
+            {{isPreview?"Hide ":"Show "}} Preview
+          </button>
+        </div>
+        <div class="form-group">
+          <img [src]="photoPath" height="150px" width="150px" *ngIf="isPreview">
         </div>
       </div>
       <div class="panel-footer">
